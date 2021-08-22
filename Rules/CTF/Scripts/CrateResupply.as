@@ -39,8 +39,8 @@ class MaterialQuantity {
 
 MaterialQuantity[] shipmentMaterialCounts = {
 	MaterialQuantity("mat_wood", 400),
-	MaterialQuantity("mat_stone", 100),
-	MaterialQuantity("mat_arrows", 20)
+	MaterialQuantity("mat_stone", 150),
+	MaterialQuantity("mat_arrows", 60)
 };
 
 //all the items that can be put into a bonus shipment
