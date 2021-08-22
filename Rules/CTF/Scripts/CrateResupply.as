@@ -117,8 +117,6 @@ void onTick(CRules@ this)
 
 void onCommand(CRules@ this, u8 cmd, CBitStream @params)
 {
-	//client plays the shipment sound on command
-	print("on command "+ isServer());
 	if (cmd == this.getCommandID("shipment sound") && !isServer())
 	{
 		Sound::Play("/ShipmentHorn.ogg");
