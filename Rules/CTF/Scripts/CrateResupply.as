@@ -19,6 +19,7 @@ const int shipmentProbability = 100;
 
 //same properties for the bonus shipment
 const int bonusShipmentFrequency = 160;
+//minimum working value is 1, any value less than one will not send the first shipment
 const int bonusShipmentStartTime = 0;
 const int bonusShipmentProbability = 75;		//%
 const int bonusShipmentItemMin = 1;
@@ -88,6 +89,13 @@ string base_name() { return "tent"; }
 
 void onInit(CRules@ this)
 {
+	//add the command needed for the client to hear shipment sounds
+	this.addCommandID("shipment sound");
+	onRestart(this);
+}
+
+void onRestart(CRules@ this)
+{
 	//spawn the initial crates on the server
 	if(isServer())
 	{
@@ -96,8 +104,6 @@ void onInit(CRules@ this)
 			sendShipment(this, (i - (initialCrateMultiplier/2)) * 20.0f, true);
 		}
 	}
-	//add the command needed for the client to hear shipment sounds
-	this.addCommandID("shipment sound");
 }
 
 void onTick(CRules@ this)
