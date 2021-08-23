@@ -18,14 +18,14 @@ const int shipmentProbability = 100;
 //TODO: drop speed and other crate create args?
 
 //same properties for the bonus shipment
-const int bonusShipmentFrequency = 160;
+const int bonusShipmentFrequency = 140;
 //minimum working value is 1, any value less than one will not send the first shipment
 const int bonusShipmentStartTime = 0;
 const int bonusShipmentProbability = 75;		//%
-const int bonusShipmentItemMin = 1;
-const int bonusShipmentItemMax = 3;
+const int bonusShipmentItemMin = 2;
+const int bonusShipmentItemMax = 4;
 //probability of adding each item between the min and max
-const int bonusShipmentItemProbability = 30;		//%
+const int bonusShipmentItemProbability = 70;		//%
 
 class MaterialQuantity {
 	string blobName;
@@ -39,9 +39,9 @@ class MaterialQuantity {
 }
 
 MaterialQuantity[] shipmentMaterialCounts = {
-	MaterialQuantity("mat_wood", 400),
-	MaterialQuantity("mat_stone", 150),
-	MaterialQuantity("mat_arrows", 60)
+	MaterialQuantity("mat_wood", 250),
+	MaterialQuantity("mat_stone", 120),
+	MaterialQuantity("mat_arrows", 20)
 };
 
 //all the items that can be put into a bonus shipment
@@ -51,27 +51,27 @@ MaterialQuantity[] bonusShipments = {
 	MaterialQuantity("keg", 1),
 	MaterialQuantity("mat_bombs", 2),
 	MaterialQuantity("mat_bombs", 2),
-	MaterialQuantity("mat_bombs", 2),
+	//MaterialQuantity("mat_bombs", 2),
 	MaterialQuantity("mat_bombs", 1),
 	MaterialQuantity("mat_waterbombs", 1),
-	MaterialQuantity("mat_arrows", 30),
+	//MaterialQuantity("mat_arrows", 30),
 	MaterialQuantity("mat_arrows", 30),
 	MaterialQuantity("mat_bombarrows", 2),
-	MaterialQuantity("mat_bombarrows", 1),
+	MaterialQuantity("mat_bombarrows", 2),
 	MaterialQuantity("mat_bombarrows", 1),
 	MaterialQuantity("mat_waterarrows", 1),
 	MaterialQuantity("mat_firearrows", 2),
 	MaterialQuantity("mat_firearrows", 2),
-	MaterialQuantity("mat_bolts", 12),
-	MaterialQuantity("mat_stone", 200),
-	MaterialQuantity("mat_stone", 200),
-	MaterialQuantity("mat_stone", 200),
+	//MaterialQuantity("mat_bolts", 12),
+	MaterialQuantity("mat_stone", 300),
+	MaterialQuantity("mat_stone", 300),
+	//MaterialQuantity("mat_stone", 200),
 	MaterialQuantity("drill", 1),
 	MaterialQuantity("chicken", 1),
 	MaterialQuantity("sponge", 1),
 	MaterialQuantity("food", 2),
-	MaterialQuantity("food", 1),
-	MaterialQuantity("mine", 1)
+	//MaterialQuantity("food", 1),
+	MaterialQuantity("mine", 2)
 	//tried these, but they need special handling to add to the crate, can do it later
 	//best place to look for examples is the map loader
 	//a generic function for all blobs would be useful, takes a name(or enum maybe?) and does whatever it needs to do to create it, depending on the blob
